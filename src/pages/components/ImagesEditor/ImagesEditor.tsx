@@ -55,9 +55,12 @@ function ImagesEditor() {
 
   return (
     <Box>
-      <ImagePreview 
-        imageURL={urlFactory()} 
-        includesPalette={changesHistory.includes("palette=css") || changesHistory.includes("palette=json")} 
+      <ImagePreview
+        imageURL={urlFactory()}
+        includesPalette={
+          changesHistory.includes('palette=css') ||
+          changesHistory.includes('palette=json')
+        }
       />
       {!useExample && !uploadImage && (
         <Box my={1} width="100%" display="flex" gap={3} justifyContent="center">
@@ -84,8 +87,9 @@ function ImagesEditor() {
             my={2}
           >
             <Button
-              disabled={positionInHistory === -1 
-                || (positionInHistory === 0 && changesHistory.length === 0)
+              disabled={
+                positionInHistory === -1 ||
+                (positionInHistory === 0 && changesHistory.length === 0)
               }
               onClick={() => dispatch(undoChange())}
             >
@@ -121,7 +125,7 @@ function ImagesEditor() {
             </Button>
             <Link href={urlFactory()} underline="none" target="_blank" rel="noopener">
               <Button>Download</Button>
-            </Link>   
+            </Link>
           </Box>
         </>
       )}

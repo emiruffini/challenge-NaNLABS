@@ -16,7 +16,7 @@ export const imagesSlice = createSlice({
       const { parameterName, parameterValue } = action.payload;
       state.currentChange = action.payload;
       state.changesHistory = state.changesHistory.filter(
-        (change) => !change.includes(parameterName)
+        (change) => !(change.split('=')[0] === parameterName)
       );
       state.changesHistory.push(`${parameterName}=${encodeURIComponent(parameterValue)}`);
       state.positionInHistory = state.changesHistory.length - 1;
@@ -33,17 +33,13 @@ export const imagesSlice = createSlice({
     },
     deleteChange: (state: ImagesState, action: PayloadAction<string>) => {
       state.changesHistory = state.changesHistory.filter(
-        (change) => !change.includes(action.payload)
+        (change) => !(change.split('=')[0] === action.payload)
       );
       state.positionInHistory = state.changesHistory.length - 1;
     },
   },
 });
 
-export const { 
-  setImageChanges,
-  undoChange,
-  redoChange,
-  deleteChange 
-} = imagesSlice.actions;
+export const { setImageChanges, undoChange, redoChange, deleteChange } =
+  imagesSlice.actions;
 export default imagesSlice.reducer;

@@ -10,7 +10,7 @@ function Chips() {
     (state: RootState) => state.images
   );
   const [changesToShow, setChangesToShow] = useState<any[]>([]);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (changesHistory.length - 1 === positionInHistory && positionInHistory >= 0) {
@@ -22,23 +22,21 @@ function Chips() {
     }
   }, [changesHistory, positionInHistory]);
 
-  
-
   return (
     <>
       <Typography color="primary" mb={2}>
         Changes applied
       </Typography>
       {changesToShow.map((change) => {
-        const propertyName = change.split('=')[0]
+        const propertyName = change.split('=')[0];
         return (
-          <Chip 
+          <Chip
             onDelete={() => dispatch(deleteChange(propertyName))}
-            key={change} 
-            label={propertyName} 
-            sx={{ mr: 2, mb: 1 }} 
+            key={change}
+            label={propertyName}
+            sx={{ mr: 2, mb: 1 }}
           />
-        )
+        );
       })}
     </>
   );

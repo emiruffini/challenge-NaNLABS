@@ -85,7 +85,7 @@ function OperationInput() {
   };
 
   const handleApplyChanges = () => {
-    dispatch(setLoading())
+    dispatch(setLoading());
     dispatch(setImageChanges({ parameterName, parameterValue }));
     setTimeout(() => {
       dispatch(setLoading());
@@ -134,8 +134,8 @@ function OperationInput() {
           sx={{ maxWidth: 300 }}
           label="Allowed values ​​in the table below"
         />
-        <Button 
-          disabled={parameterName === '' || parameterValue === ''} 
+        <Button
+          disabled={parameterName === '' || parameterValue === ''}
           onClick={handleApplyChanges}
         >
           Apply changes

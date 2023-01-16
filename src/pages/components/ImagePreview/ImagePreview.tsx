@@ -55,12 +55,15 @@ function ImagePreview(props: ImagePreviewProps) {
           alt="selectedIMG"
         />
       ) : (
-        <Box display='flex' justifyContent='center' alignItems='center' width="100%">
-          <Typography color='primary'> 
-                    Press <Link  href={props.imageURL} target="_blank" rel="noopener">download</Link> to see the palette
-                  </Typography>
+        <Box display="flex" justifyContent="center" alignItems="center" width="100%">
+          <Typography color="primary">
+            Press{' '}
+            <Link href={props.imageURL} target="_blank" rel="noopener">
+              download
+            </Link>{' '}
+            to see the palette
+          </Typography>
         </Box>
-        
       )}
     </Box>
   );

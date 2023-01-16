@@ -1,46 +1,64 @@
-# Getting Started with Create React App
+# Runnig NaNLABS challenge in a Docker Container
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Installation
 
-## Available Scripts
+```bash
+$ npm install
+```
+Ensure also that [Docker is installed](https://docs.docker.com/engine/install) and [Nigix is installed](https://nginx.org/en/docs/install.html) on your work station.
 
-In the project directory, you can run:
+## Running the app using node server (the normal way)
 
-### `npm start`
+```bash
+# development
+$ npm start
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# production
+$ npm run build:prod
+$ npm start
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Using Docker Compose for development
+```sh
+# Build the docker image
+$ docker-compose -f docker-compose.dev.yml build
 
-### `npm test`
+# Start and login to the container
+$ docker-compose -f docker-compose.dev.yml up -d
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Using Docker Compose for production
+```sh
+# To avoid errors create a file .env.production containing
+$ DISABLE_ESLINT_PLUGIN=true
 
-### `npm run build`
+# Build the docker image
+$ docker-compose -f docker-compose.prod.yml build
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Start and login to the container
+$ docker run -p 80:80 --name react-app nanlabs-challenge-prod
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Other useful Docker commands
+```sh
+# Get the container ID
+$ docker ps
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# View logs
+$ docker logs <container id>
 
-### `npm run eject`
+# Enter the container (In alpine, use sh because bash is not installed by default)
+$ docker exec -it <container id> /bin/sh
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Testing
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+# unit tests
+UNDER CONSTRUCTION
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## License
+[MIT licensed](LICENSE)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).

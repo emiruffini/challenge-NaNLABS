@@ -1,13 +1,83 @@
+:root {
+  --Neutral01: #262b2f;
+  --Neutral02: #384146;
+  --Neutral03: #4b565e;
+  --Neutral04: #5e6c75;
+  --Neutral05: #71818c;
+  --Neutral06: #88969f;
+  --Neutral07: #9fabb2;
+  --Neutral08: #b7bfc5;
+  --Neutral09: #ced4d8;
+  --Neutral10: #e5e8ea;
+  --Neutral11: #fafafb;
+
+  --Primary01: #007343;
+  --Primary02: #00884f;
+  --Primary03: #00a25e;
+  --Primary04: #00af66;
+  --Primary05: #4dc794;
+  --Primary06: #94d1b8;
+  --Primary07: #e5f7f0;
+
+  --SecondaryDisabled: #bac1b8;
+  --Secondary00: #3c4b39;
+  --Secondary01: #52634e;
+  --Secondary02: #84957f;
+  --Secondary03: #baccb3;
+  --Secondary04: #d5e8ce;
+  --Secondary05: #e4f6dc;
+
+  --TertiaryDisabled: #afc1c3;
+  --Tertiary00: #1e4d52;
+  --Tertiary01: #38656a;
+  --Tertiary02: #6b989d;
+  --Tertiary03: #a1cfd4;
+  --Tertiary04: #bcebf0;
+  --Tertiary05: #caf9fe;
+
+  --AccentDisabled: #b6bcdd;
+  --Accent00: #2f3f90;
+  --Accent01: #4958a9;
+  --Accent02: #7c8be0;
+  --Accent03: #b8c3ff;
+  --Accent04: #dde1ff;
+  --Accent05: #efefff;
+
+  --Success01: #05603a;
+  --Success02: #027a48;
+  --Success03: #12b76a;
+  --Success04: #6ce9a6;
+  --Success05: #d1fadf;
+
+  --Error01: #912018;
+  --Error02: #b42318;
+  --Error03: #f04438;
+  --Error04: #fda29b;
+  --Error05: #fee4e2;
+
+  --Warning01: #93370d;
+  --Warning02: #b54708;
+  --Warning03: #f79009;
+  --Warning04: #fec84b;
+  --Warning05: #fef0c7;
+
+  --Info01: #065986;
+  --Info02: #026aa2;
+  --Info03: #0ba5ec;
+  --Info04: #7cd4fd;
+  --Info05: #e0f2fe;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    'Source Sans Pro', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--Neutral11);
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }

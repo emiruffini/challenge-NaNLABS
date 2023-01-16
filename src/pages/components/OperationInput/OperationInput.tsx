@@ -142,7 +142,7 @@ function OperationInput() {
         </Button>
       </Box>
       {fullParameter.name !== '' && (
-        <TableContainer component={Paper}>
+        <TableContainer component={Paper} sx={{ overflow: 'auto' }}>
           <Table sx={{ minWidth: 650 }} aria-label="simple table">
             <caption>Each row of the table indicates an enterable value</caption>
             <TableHead>
